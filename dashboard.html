@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard</title>
+
+    <!-- Google font CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- DaisyUi and Tailwind Css CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/1d5b89be9d.js" crossorigin="anonymous"></script>
+
+    <!-- Custom Css for Font -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .outfit {
+                font-family: "Outfit", serif;
+            }
+        }
+    </style>
+</head>
+
+<body class="outfit">
+
+    <!--todo header section -->
+    <header class="max-w-[466px] mx-auto p-6 border-b-2 border-[rgba(8,8,8,0.1)]">
+        <nav class="flex justify-between items-center ">
+            <div class="flex items-center mt-2  space-x-2">
+                <!-- image -->
+                <div class="max-w-[50px] h-[55px]">
+                    <img class="w-full h-full" src="Payoo-MFS-Resources/logo.png" alt="">
+                </div>
+                <!-- text -->
+                <div class="space-y-[6px]">
+                    <h1 class="text-[1.5rem] text-[rgba(8,8,8,0.9)] font-extrabold">$ <span
+                            id="mainBalance">45000</span></h1>
+                    <p class="font-normal text-[1.2rem] text-[rgba(8,8,8,0.5)]">Available Balance</p>
+                </div>
+            </div>
+            <!-- todo logout button -->
+            <div>
+                <button class="btn h-[38px] p-4
+                text-[rgba(8,8,8,0.5)] font-normal text-[1.2rem] bg-white border-[rgba(8,8,8,0.1)]">Logout
+                    <i class="fa-solid fa-arrow-right-from-bracket text-[#666768]"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- todo main section -->
+    <main class="max-w-[466px] mx-auto p-6">
+
+        <!-- todo Welcome to Payooo! -->
+        <section class="space-y-6">
+            <!--? TEXt  -->
+            <div class="space-y-3">
+                <h1 class="font-bold text-[1.67rem] text-[#080808]">🔥 Welcome to Payooo!</h1>
+                <p class="font-normal text-[1.12rem] text-[rgba(8,8,8,0.5)]">Enjoy easy and convenient financial
+                    services with us. Cashout charge is low and </p>
+            </div>
+
+            <!--? Cards -->
+            <div class="grid grid-cols-3 gap-3">
+
+                <!--? Card-1 -->
+                <div id="card-one" class="border-2 hover:border-[#0874f280]  rounded-xl 
+                py-5 px-3 space-y-4
+                flex flex-col items-center ">
+                    <!-- Image -->
+                    <div class="max-w-[50px]  mx-auto">
+                        <img class="w-full " src="Payoo-MFS-Resources/Add.png" alt="">
+                    </div>
+                    <p class="text-[1.12rem] text-[rgba(8,8,8,0.7) font-normal">Add Money</p>
+                </div>
+
+                <!--? Card-2 -->
+                <div id="card-two" class="border-2 hover:border-[#0874f280] rounded-xl 
+                py-5 px-3 space-y-4
+                flex flex-col items-center ">
+                    <!-- Image -->
+                    <div class="max-w-[50px]  mx-auto">
+                        <img class="w-full " src="Payoo-MFS-Resources/Cashout.png" alt="">
+                    </div>
+                    <p class="text-[1.12rem] text-[rgba(8,8,8,0.7) font-normal">Cashout</p>
+                </div>
+
+                <!--? Card-3 -->
+                <div id="card-three" class="border-2 hover:border-[#0874f280] rounded-xl 
+                py-5 px-3 space-y-4
+                flex flex-col items-center ">
+                    <!-- Image -->
+                    <div class="max-w-[50px]  mx-auto">
+                        <img class="w-full " src="Payoo-MFS-Resources/Transfer.png" alt="">
+                    </div>
+                    <p class="text-[1.12rem] text-[rgba(8,8,8,0.7) font-normal text-center">Transfer Money</p>
+                </div>
+
+                <!--? Card-4 -->
+                <div id="card-four" class="border-2 hover:border-[#0874f280]  rounded-xl 
+                py-5 px-3 space-y-4
+                flex flex-col items-center ">
+                    <!-- Image -->
+                    <div class="max-w-[50px]  mx-auto">
+                        <img class="w-full " src="Payoo-MFS-Resources/Bonus.png" alt="">
+                    </div>
+                    <p class="text-[1.12rem] text-[rgba(8,8,8,0.7) font-normal ">Get Bonus</p>
+                </div>
+
+                <!--? Card-5 -->
+                <div id="card-five" class="border-2 hover:border-[#0874f280] rounded-xl 
+                py-5 px-3 space-y-4
+                flex flex-col items-center ">
+                    <!-- Image -->
+                    <div class="max-w-[50px]  mx-auto">
+                        <img class="w-full " src="Payoo-MFS-Resources/paybill.png" alt="">
+                    </div>
+                    <p class="text-[1.12rem] text-[rgba(8,8,8,0.7) font-normal">Pay Bill</p>
+                </div>
+
+                <!--? Card-6 -->
+                <div id="card-six" class="border-2 hover:border-[#0874f280]  rounded-xl 
+                py-5 px-3 space-y-4
+                flex flex-col items-center ">
+                    <!-- Image -->
+                    <div class="max-w-[50px]  mx-auto">
+                        <img class="w-full " src="Payoo-MFS-Resources/transaction.png" alt="">
+                    </div>
+                    <p class="text-[1.12rem] text-[rgba(8,8,8,0.7) font-normal">Transactions</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- todo Add Money section -->
+        <section id="takaAdd" class=" hidden mt-8  bg-[#F4F5F7]">
+            <div class="space-y-4">
+                <h1 class="text-[1.5rem] font-semibold text-[rgba(8,8,8,0.9)]">Add Money</h1>
+
+                <div class="card bg-white w-full shadow-2xl">
+                    <form class="card-body">
+                        <p class="text-[rgba(8,8,8,0.7)] font-medium text-[1.2rem]">Select A Bank</p>
+                        <div class="form-control space-y-3">
+                            <select class="select bg-[#F4F5F7] rounded-3xl w-full">
+                                <option disabled selected>Select Bank</option>
+                                <option value="Bkash">Bkash</option>
+                                <option value="Nagad">Nagad</option>
+                                <option value="Rocket">Rocket</option>
+                                <option value="DBBL">DBBL</option>
+                                <option value="Bank">Bank</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-control space-y-3">
+                            <p class="text-[rgba(8,8,8,0.7)] font-medium text-[1.2rem]">Bank Account Number</p>
+                            <input value="01800000000" type="number" placeholder="Enter 11 digit account number"
+                                class="input bg-[#F4F5F7] rounded-3xl" required />
+                        </div>
+
+                        <div class="form-control space-y-3">
+                            <p class="text-[rgba(8,8,8,0.7)] font-medium text-[1.2rem]">Amount to Add</p>
+                            <input id="amount" type="number" placeholder="Add Amount to withdraw"
+                                class="input bg-[#F4F5F7] rounded-3xl" required />
+                        </div>
+
+                        <div class="form-control space-y-3">
+                            <p class="text-[rgba(8,8,8,0.7)] font-medium text-[1.2rem]">Pin Number</p>
+                            <input id="pin" value="1234" type="number" placeholder="Enter 4 digit pin number"
+                                class="input bg-[#F4F5F7] rounded-3xl" required />
+                        </div>
+
+                        <div class="form-control mt-6">
+                            <button id="addMoney"
+                                class="btn text-[1.5rem] font-semibold bg-[#0874F2] text-white rounded-3xl h-[54px]">Add
+                                Money</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- todo Cash Out section -->
+        <section id="takaOut" class=" hidden mt-8  bg-[#F4F5F7]">
+            <div class="space-y-4">
+                <h1 class="text-[1.5rem] font-semibold text-[rgba(8,8,8,0.9)]">Cash Out</h1>
+
+                <div class="card bg-white w-full shadow-2xl">
+                    <form class="card-body">
+
+                        <div class="form-control space-y-3">
+                            <p class="text-[rgba(8,8,8,0.7)] font-medium text-[1.2rem]">Agent Number</p>
+                            <input value="01800000000" type="number" placeholder="Enter 11 digit account number"
+                                class="input bg-[#F4F5F7] rounded-3xl" required />
+                        </div>
+
+                        <div class="form-control space-y-3">
+                            <p class="text-[rgba(8,8,8,0.7)] font-medium text-[1.2rem]">Amount</p>
+                            <input id="minusAmount" type="number" placeholder="Add Amount to withdraw"
+                                class="input bg-[#F4F5F7] rounded-3xl" required />
+                        </div>
+
+                        <div class="form-control space-y-3">
+                            <p class="text-[rgba(8,8,8,0.7)] font-medium text-[1.2rem]">Pin Number</p>
+                            <input id="pin" value="1234" type="number" placeholder="Enter 4 digit pin number"
+                                class="input bg-[#F4F5F7] rounded-3xl" required />
+                        </div>
+
+                        <div class="form-control mt-6">
+                            <button id="cashOutMoney"
+                                class="btn text-[1.5rem] font-semibold bg-[#0874F2] text-white rounded-3xl h-[54px]">Withdraw
+                                Money</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- todo Transfer Money section -->
+        <section id="takaTrans" class=" hidden mt-8  bg-[#F4F5F7]">
+            <div class="space-y-4">
+                <h1 class="text-[1.5rem] font-semibold text-[rgba(8,8,8,0.9)]">Transfer Money</h1>
+
+                <div class="card bg-white w-full shadow-2xl">
+                    <form class="card-body">
+
+                        <div class="form-control space-y-3">
+                            <p class="text-[rgba(8,8,8,0.7)] font-medium text-[1.2rem]">User Account Number</p>
+                            <input value="01800000000" type="number" placeholder="Enter 11 digit account number"
+                                class="input bg-[#F4F5F7] rounded-3xl" required />
+                        </div>
+
+                        <div class="form-control space-y-3">
+                            <p class="text-[rgba(8,8,8,0.7)] font-medium text-[1.2rem]">Amount</p>
+                            <input id="takaTransfer" type="number" placeholder="Add Amount to withdraw"
+                                class="input bg-[#F4F5F7] rounded-3xl" required />
+                        </div>
+
+                        <div class="form-control space-y-3">
+                            <p class="text-[rgba(8,8,8,0.7)] font-medium text-[1.2rem]">Pin Number</p>
+                            <input id="pin" value="1234" type="number" placeholder="Enter 4 digit pin number"
+                                class="input bg-[#F4F5F7] rounded-3xl" required />
+                        </div>
+
+                        <div class="form-control mt-6">
+                            <button id="transMoney"
+                                class="btn text-[1.5rem] font-semibold bg-[#0874F2] text-white rounded-3xl h-[54px]">Send
+                                Now</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- todo Get Bonus section -->
+        <section id="takaBonus" class=" hidden mt-8  bg-[#F4F5F7]">
+            <div class="space-y-4">
+                <h1 class="text-[1.5rem] font-semibold text-[rgba(8,8,8,0.9)]">Get Bonus</h1>
+
+                <div class="card bg-white w-full shadow-2xl">
+                    <form class="card-body">
+
+                        <div class="form-control space-y-3">
+                            <p class="text-[rgba(8,8,8,0.7)] font-medium text-[1.2rem]">Enter Bonus Coupon</p>
+                            <input id="coupon" type="text" placeholder="Enter your coupon"
+                                class="input bg-[#F4F5F7] rounded-3xl" required />
+                        </div>
+
+                        <div class="form-control mt-6">
+                            <button id="bonus-btn"
+                                class="btn text-[1.5rem] font-semibold bg-[#0874F2] text-white rounded-3xl h-[54px]">Get
+                                Bonus</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- todo Pay Bill section -->
+        <section id="takaBill" class=" hidden mt-8  bg-[#F4F5F7]">
+            <div class="space-y-4">
+                <h1 class="text-[1.5rem] font-semibold text-[rgba(8,8,8,0.9)]">Pay Bill</h1>
+
+                <div class="card bg-white w-full shadow-2xl">
+                    <form class="card-body">
+                        <p class="text-[rgba(8,8,8,0.7)] font-medium text-[1.2rem]">Select To Pay</p>
+                        <div class="form-control space-y-3">
+                            <select class="select bg-[#F4F5F7] rounded-3xl w-full">
+                                <option disabled selected>Select Bank</option>
+                                <option value="Bkash">Bkash</option>
+                                <option value="Nagad">Nagad</option>
+                                <option value="Rocket">Rocket</option>
+                                <option value="DBBL">DBBL</option>
+                                <option value="Bank">Bank</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-control space-y-3">
+                            <p class="text-[rgba(8,8,8,0.7)] font-medium text-[1.2rem]">Biller Account Number</p>
+                            <input value="01800000000" type="number" placeholder="Enter account number"
+                                class="input bg-[#F4F5F7] rounded-3xl" required />
+                        </div>
+
+                        <div class="form-control space-y-3">
+                            <p class="text-[rgba(8,8,8,0.7)] font-medium text-[1.2rem]">Amount to Pay</p>
+                            <input id="payAmount" type="number" placeholder="Add Amount to pay"
+                                class="input bg-[#F4F5F7] rounded-3xl" required />
+                        </div>
+
+                        <div class="form-control space-y-3">
+                            <p class="text-[rgba(8,8,8,0.7)] font-medium text-[1.2rem]">Pin Number</p>
+                            <input id="pin" value="1234" type="number" placeholder="Enter 4 digit pin number"
+                                class="input bg-[#F4F5F7] rounded-3xl" required />
+                        </div>
+
+                        <div class="form-control mt-6">
+                            <button id="payBil-btn"
+                                class="btn text-[1.5rem] font-semibold bg-[#0874F2] text-white rounded-3xl h-[54px]">Pay
+                                Now</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+
+    <!--todo  Js link  -->
+    <script src="script/toggle.js"></script>
+    <script src="script/addMoney.js"></script>
+    <script src="script/cashoutMoney.js"></script>
+    <script src="script/transferMoney.js"></script>
+    <script src="script/bonus.js"></script>
+    <script src="script/paybill.js"></script>
+</body>
+
+</html>

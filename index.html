@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payooo!</title>
+
+    <!-- Google font CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- DaisyUi and Tailwind Css CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/1d5b89be9d.js" crossorigin="anonymous"></script>
+
+    <!-- Custom Css for Font -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .outfit {
+                font-family: "Outfit", serif;
+            }
+        }
+    </style>
+</head>
+
+<body class="outfit">
+
+    <!-- Main section -->
+    <main class="max-w-[466px] mx-auto">
+
+        <!--todo Image container -->
+        <section class="w-[316px] h-[312px] mx-auto mt-56">
+            <div class="w-full">
+                <img class="w-full" src="Payoo-MFS-Resources/circle.png">
+            </div>
+            <div class="max-w-28 mx-auto relative -top-[250px]">
+                <img class="w-full" src="Payoo-MFS-Resources/logo.png">
+            </div>
+        </section>
+
+        <!--todo Login Form container -->
+        <section class="relative -top-[130px]">
+            <form class="card bg-[#FFFFFF] w-[402px] mx-auto  shadow-xl p-9  space-y-6 rounded-3xl">
+                <div class="space-y-4">
+                    <h1 class="text-[#080808] text-[1.3rem] font-medium">Mobile Number</h1>
+                    <input value="01800000000" id="account-number" type="text" placeholder="Enter your number"
+                        class="input input-bordered mt-2 w-full px-5 py-9 text-[1.3rem] font-light text-[#080808] rounded-[32px] bg-[#F4F5F7] border-none"
+                        required>
+                </div>
+                <div class="space-y-4">
+                    <h1 class="text-[#080808] text-[1.3rem] font-medium">4 Digit Pin</h1>
+                    <input value="1234" id="account-pin" type="password" placeholder="Enter 4 Digit Pin"
+                        class="input input-bordered mt-2 w-full  px-5 py-9 text-[1.3rem] font-light text-[#080808] rounded-[32px] bg-[#F4F5F7] border-none"
+                        required>
+                </div>
+                <button id="login-btn"
+                    class="btn px-5  rounded-[32px] text-[#FFFFFF] text-[1.67rem] font-semibold bg-[#0874F2] h-[54px]">Login</button>
+            </form>
+        </section>
+
+    </main>
+
+
+    <!-- Custom Js -->
+    <script src="script/login.js"></script>
+</body>
+
+</html>
