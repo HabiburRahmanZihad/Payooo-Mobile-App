@@ -5,58 +5,76 @@ const cardFour = document.getElementById('card-four');
 const cardFive = document.getElementById('card-five');
 const cardSix = document.getElementById('card-six');
 
+const takaAdd = document.getElementById('takaAdd');
+const takaOut = document.getElementById('takaOut');
+const takaTrans = document.getElementById('takaTrans');
+const takaBonus = document.getElementById('takaBonus');
+const takaBill = document.getElementById('takaBill');
+const transactionHistory = document.getElementById('transactionHistory');
 
 cardOne.addEventListener('click', function (event) {
     event.preventDefault();
 
-    const takaAdd = document.getElementById('takaAdd');
     takaAdd.style.display = 'block';
     takaOut.style.display = 'none';
     takaTrans.style.display = 'none';
     takaBonus.style.display = 'none';
     takaBill.style.display = 'none';
+    transactionHistory.style.display = 'none';
 });
 
 cardTwo.addEventListener('click', function (event) {
     event.preventDefault();
-    
-    const takaOut = document.getElementById('takaOut');
+
     takaOut.style.display = 'block';
     takaAdd.style.display = 'none';
     takaTrans.style.display = 'none';
     takaBonus.style.display = 'none';
     takaBill.style.display = 'none';
+    transactionHistory.style.display = 'none';
 });
 
 cardThree.addEventListener('click', function (event) {
     event.preventDefault();
-    
-    const takaTrans = document.getElementById('takaTrans');
+
     takaTrans.style.display = 'block';
     takaOut.style.display = 'none';
     takaAdd.style.display = 'none';
     takaBonus.style.display = 'none';
     takaBill.style.display = 'none';
+    transactionHistory.style.display = 'none';
 });
 
 cardFour.addEventListener('click', function (event) {
     event.preventDefault();
-    
-    const takaBonus = document.getElementById('takaBonus');
+
     takaBonus.style.display = 'block';
     takaOut.style.display = 'none';
-    takaTrans.style.display = 'none';   
+    takaTrans.style.display = 'none';
     takaAdd.style.display = 'none';
     takaBill.style.display = 'none';
+    transactionHistory.style.display = 'none';
 });
 
 cardFive.addEventListener('click', function (event) {
     event.preventDefault();
-    
-    const takaBill = document.getElementById('takaBill');
+
     takaBill.style.display = 'block';
     takaOut.style.display = 'none';
     takaTrans.style.display = 'none';
     takaBonus.style.display = 'none';
     takaAdd.style.display = 'none';
+    transactionHistory.style.display = 'none';
+});
+
+
+cardSix.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    transactionHistory.style.display = 'block';
+    takaAdd.style.display = 'none';
+    takaOut.style.display = 'none';
+    takaTrans.style.display = 'none';
+    takaBonus.style.display = 'none';
+    takaBill.style.display = 'none';
 });
