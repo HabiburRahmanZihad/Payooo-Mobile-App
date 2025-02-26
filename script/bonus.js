@@ -3,7 +3,7 @@ const bonusTaka = document.getElementById('bonus-btn');
 bonusTaka.addEventListener('click', function (event) {
     event.preventDefault();
     const amount = document.getElementById('coupon');
-    const amountValue = parseInt(amount.value);
+    const amountValue = (amount.value);
 
 
     const mainBalance = document.getElementById('mainBalance');
