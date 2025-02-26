@@ -3,8 +3,8 @@ const transMoney = document.getElementById('transMoney');
 transMoney.addEventListener('click', function (event) {
     event.preventDefault();
 
-    const minusAmount = document.getElementById('takaTransfer').value;
-    const amountValue = parseInt(minusAmount);
+    const minusAmount = document.getElementById('takaTransfer');
+    const amountValue = parseInt(minusAmount.value);
 
     const accountNumber = document.getElementById('acc-number').value;
     const accNumLength = accountNumber.length;
@@ -81,4 +81,7 @@ transMoney.addEventListener('click', function (event) {
     } else {
         alert('Enter Amount');
     }
+
+
+    minusAmount.value = '';
 });

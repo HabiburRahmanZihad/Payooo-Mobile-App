@@ -3,8 +3,8 @@ const payBill = document.getElementById('payBil-btn');
 payBill.addEventListener('click', function (event) {
     event.preventDefault();
 
-    const payAmount = document.getElementById('payAmount').value;
-    const amountValue = parseInt(payAmount);
+    const payAmount = document.getElementById('payAmount');
+    const amountValue = parseInt(payAmount.value);
 
     const accountNumber = document.getElementById('acc-number').value;
     const accNumLength = accountNumber.length;
@@ -86,6 +86,6 @@ payBill.addEventListener('click', function (event) {
         alert('Enter Amount');
     }
 
-    amount = '';
+    payAmount.value = '';
 
 });

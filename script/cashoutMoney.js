@@ -3,8 +3,8 @@ const cashOutMoney = document.getElementById('cashOutMoney');
 cashOutMoney.addEventListener('click', function (event) {
     event.preventDefault();
 
-    const minusAmount = document.getElementById('minusAmount').value;
-    const amountValue = parseFloat(minusAmount);
+    const minusAmount = document.getElementById('minusAmount');
+    const amountValue = parseFloat(minusAmount.value);
 
     const accountNumber = document.getElementById('acc-number').value;
     const accNumLength = accountNumber.length;
@@ -85,5 +85,7 @@ cashOutMoney.addEventListener('click', function (event) {
     } else {
         alert('Enter Amount');
     }
-    latestHistoryContainer.appendChild(transactionContainer);
+
+
+    minusAmount.value = "";
 });

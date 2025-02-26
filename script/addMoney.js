@@ -3,8 +3,8 @@ const addMoney = document.getElementById('addMoney');
 addMoney.addEventListener('click', function (event) {
     event.preventDefault();
 
-    const amount = document.getElementById('amount').value;
-    const amountValue = parseInt(amount);
+    const amount = document.getElementById('amount');
+    const amountValue = parseInt(amount.value);
 
     const accountNumber = document.getElementById('account-number').value;
     const accNumLength = accountNumber.length;
@@ -79,4 +79,6 @@ addMoney.addEventListener('click', function (event) {
     } else {
         alert('Enter Amount');
     }
+    
+    amount.value= "";
 });
