@@ -12,8 +12,8 @@ addMoney.addEventListener('click', function (event) {
     const mainBalance = document.getElementById('mainBalance');
     const mainBalanceValue = parseInt(mainBalance.innerText);
 
-    const pin = document.getElementById('pin').value;
-    const pinValue = parseInt(pin);
+    const pin = document.getElementById('pin');
+    const pinValue = parseInt(pin.value);
 
     const totalBalance = mainBalanceValue + amountValue;
     if (amountValue > 0 && accNumLength === 11) {
@@ -81,4 +81,5 @@ addMoney.addEventListener('click', function (event) {
     }
     
     amount.value= "";
+    pin.value = "";
 });

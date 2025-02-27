@@ -12,7 +12,7 @@ payBill.addEventListener('click', function (event) {
     const mainBalance = document.getElementById('mainBalance');
     const mainBalanceValue = parseInt(mainBalance.innerText);
 
-    const pin = document.getElementById('pin').value;
+    const pin = document.getElementById('pinBill').value;
     const pinValue = parseInt(pin);
 
     const totalBalance = mainBalanceValue - amountValue;
@@ -87,5 +87,6 @@ payBill.addEventListener('click', function (event) {
     }
 
     payAmount.value = '';
+    pin.value = '';
 
 });

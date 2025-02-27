@@ -12,12 +12,12 @@ cashOutMoney.addEventListener('click', function (event) {
     const mainBalance = document.getElementById('mainBalance');
     const mainBalanceValue = parseInt(mainBalance.innerText);
 
-    const pin = document.getElementById('pin').value;
-    const pinValue = parseInt(pin);
+    const pin = document.getElementById('pinCash');
+    const pinValue = parseInt(pin.value);
 
     const totalBalance = mainBalanceValue - amountValue;
 
-    if(mainBalanceValue < amountValue){
+    if (mainBalanceValue < amountValue) {
         alert('Insufficient Balance');
         return;
     }
@@ -76,9 +76,9 @@ cashOutMoney.addEventListener('click', function (event) {
             `;
             transactionContainer.appendChild(div);
 
-            
-            
-            
+
+
+
         } else {
             alert('Invalid Pin');
         }
@@ -88,4 +88,5 @@ cashOutMoney.addEventListener('click', function (event) {
 
 
     minusAmount.value = "";
+    pin.value = "";
 });

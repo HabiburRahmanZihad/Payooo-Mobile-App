@@ -9,42 +9,40 @@ bonusTaka.addEventListener('click', function (event) {
     const mainBalance = document.getElementById('mainBalance');
     const mainBalanceValue = parseInt(mainBalance.innerText);
 
-    const pin = document.getElementById('pin').value;
-    const pinValue = parseInt(pin);
 
     const gift = 999;
     const totalBalance = mainBalanceValue + gift;
 
-    if (amountValue == 'abcd') {
-        if (pinValue === 1234) {
-            mainBalance.innerText = totalBalance;
-            alert('Bonus Added Successfully');
+    if (amountValue == 'Payooo!') {
+
+        mainBalance.innerText = totalBalance;
+        alert('Bonus Added Successfully');
 
 
 
-            const transactionContainer = document.getElementById('transaction-container');
-            const today = new Date();
-            const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        const transactionContainer = document.getElementById('transaction-container');
+        const today = new Date();
+        const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 
-            // const today = new Date();
-            let hours = today.getHours();
-            let minutes = today.getMinutes();
-            let seconds = today.getSeconds();
-            let ampm = hours >= 12 ? 'PM' : 'AM';
+        // const today = new Date();
+        let hours = today.getHours();
+        let minutes = today.getMinutes();
+        let seconds = today.getSeconds();
+        let ampm = hours >= 12 ? 'PM' : 'AM';
 
-            // Convert 24-hour format to 12-hour format
-            hours = hours % 12;
-            hours = hours ? hours : 12; // the hour '0' should be '12'
-            minutes = minutes < 10 ? '0' + minutes : minutes; // Pad single digit minutes
-            seconds = seconds < 10 ? '0' + seconds : seconds; // Pad single digit seconds
+        // Convert 24-hour format to 12-hour format
+        hours = hours % 12;
+        hours = hours ? hours : 12; // the hour '0' should be '12'
+        minutes = minutes < 10 ? '0' + minutes : minutes; // Pad single digit minutes
+        seconds = seconds < 10 ? '0' + seconds : seconds; // Pad single digit seconds
 
-            const time = hours + ":" + minutes + ":" + seconds + " " + ampm;
+        const time = hours + ":" + minutes + ":" + seconds + " " + ampm;
 
 
-            //todo CarD Design 
-            const div = document.createElement('div');
-            div.classList.add('flex', 'items-center', 'justify-between', 'bg-white', 'px-4', 'py-3', 'rounded-xl', 'space-x-4', 'border-[rgba(8,8,8,0.1)]', 'border-2', 'mt-4');
-            div.innerHTML = `
+        //todo CarD Design 
+        const div = document.createElement('div');
+        div.classList.add('flex', 'items-center', 'justify-between', 'bg-white', 'px-4', 'py-3', 'rounded-xl', 'space-x-4', 'border-[rgba(8,8,8,0.1)]', 'border-2', 'mt-4');
+        div.innerHTML = `
             <div class="flex items-center space-x-4">
 
             <!--? Image logo -->
@@ -64,13 +62,11 @@ bonusTaka.addEventListener('click', function (event) {
             <i class="fa-solid fa-ellipsis-vertical text-[#666768] text-[2rem]"></i>
             </div>
             `;
-            transactionContainer.appendChild(div);
-        } else {
-            alert('Invalid Pin');
-        }
+        transactionContainer.appendChild(div);
+
     } else {
         alert('Enter Valid Coupon');
     }
 
-    amount.value= "";
+    amount.value = "";
 });

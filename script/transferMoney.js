@@ -12,8 +12,8 @@ transMoney.addEventListener('click', function (event) {
     const mainBalance = document.getElementById('mainBalance');
     const mainBalanceValue = parseInt(mainBalance.innerText);
 
-    const pin = document.getElementById('pin').value;
-    const pinValue = parseInt(pin);
+    const pin = document.getElementById('pinTrans');
+    const pinValue = parseInt(pin.value);
 
     const totalBalance = mainBalanceValue - amountValue;
 
@@ -84,4 +84,5 @@ transMoney.addEventListener('click', function (event) {
 
 
     minusAmount.value = '';
+    pin.value = '';
 });

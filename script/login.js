@@ -6,18 +6,18 @@ loginBtn.addEventListener('click', function (event) {
     // console.log(number.length);
 
     const pin = document.getElementById('account-pin').value;
+    const pinvalue = parseInt(pin);
     // console.log(pin.length);
 
     if (number.length === 11) {
-        if (pin.length === 4) {
-            // console.log('Login successful');
+        if (pinvalue === 1234) {
             window.location.href = 'dashboard.html';
         }
         else {
-            console.log('Invalid pin');
+            alert('Invalid Pin');
         }
     }
     else {
-        console.log('Invalid account number');
+        alert('Invalid account number');
     }
 });
