@@ -3,28 +3,29 @@ const cashOutMoney = document.getElementById('cashOutMoney');
 cashOutMoney.addEventListener('click', function (event) {
     event.preventDefault();
 
-    const minusAmount = document.getElementById('minusAmount');
-    const amountValue = parseFloat(minusAmount.value);
+    const minusAmount = getInputValueById("minusAmount");
+    const pin = getInputValueById("pinCash");
+    const convertBalance = getInnerTextValueById('mainBalance');
+
 
     const accountNumber = document.getElementById('acc-number').value;
     const accNumLength = accountNumber.length;
 
+    const minusAmountValue = document.getElementById("minusAmount");
+    const pinValue = document.getElementById("pinCash");
     const mainBalance = document.getElementById('mainBalance');
-    const mainBalanceValue = parseInt(mainBalance.innerText);
 
-    const pin = document.getElementById('pinCash');
-    const pinValue = parseInt(pin.value);
 
-    const totalBalance = mainBalanceValue - amountValue;
+    const totalBalance = convertBalance - minusAmount;
 
-    if (mainBalanceValue < amountValue) {
+    if (convertBalance < minusAmount) {
         alert('Insufficient Balance');
         return;
     }
 
 
-    if (amountValue > 0 && accNumLength === 11) {
-        if (pinValue === 1234) {
+    if (minusAmount > 0 && accNumLength === 11) {
+        if (pin === 1234) {
             mainBalance.innerText = totalBalance;
             alert('Cash Out Successfully');
 
@@ -33,23 +34,7 @@ cashOutMoney.addEventListener('click', function (event) {
 
 
             const transactionContainer = document.getElementById('transaction-container');
-            const today = new Date();
-            const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-
-            // const today = new Date();
-            let hours = today.getHours();
-            let minutes = today.getMinutes();
-            let seconds = today.getSeconds();
-            let ampm = hours >= 12 ? 'PM' : 'AM';
-
-            // Convert 24-hour format to 12-hour format
-            hours = hours % 12;
-            hours = hours ? hours : 12; // the hour '0' should be '12'
-            minutes = minutes < 10 ? '0' + minutes : minutes; // Pad single digit minutes
-            seconds = seconds < 10 ? '0' + seconds : seconds; // Pad single digit seconds
-
-            const time = hours + ":" + minutes + ":" + seconds + " " + ampm;
-
+            const DateTime = getDateTime();
 
             //todo CarD Design 
             const div = document.createElement('div');
@@ -65,7 +50,7 @@ cashOutMoney.addEventListener('click', function (event) {
             <!--? text  -->
             <div class="text-[rgba(8,8,8,0.7)]">
             <h1 class=" text-[1.2rem] font-semibold">Cash Out</h1>
-            <p class="text-[1rem] font-normal">${date} ${time}</p>
+            <p class="text-[1rem] font-normal">${DateTime}</p>
             </div>
             </div>
 
@@ -87,6 +72,6 @@ cashOutMoney.addEventListener('click', function (event) {
     }
 
 
-    minusAmount.value = "";
-    pin.value = "";
+    minusAmountValue.value = '';
+    pinValue.value = '';
 });

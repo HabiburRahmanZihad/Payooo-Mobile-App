@@ -3,49 +3,35 @@ const payBill = document.getElementById('payBil-btn');
 payBill.addEventListener('click', function (event) {
     event.preventDefault();
 
-    const payAmount = document.getElementById('payAmount');
-    const amountValue = parseInt(payAmount.value);
+    const payAmount = getInputValueById('payAmount');
+    const pin = getInputValueById('pinBill');
+    const convertBalance = getInnerTextValueById('mainBalance');
+
+    const payValue = document.getElementById('payAmount');
+    const pinValue = document.getElementById('pinBill');
+    const mainBalance = document.getElementById('mainBalance');
+
 
     const accountNumber = document.getElementById('acc-number').value;
     const accNumLength = accountNumber.length;
 
-    const mainBalance = document.getElementById('mainBalance');
-    const mainBalanceValue = parseInt(mainBalance.innerText);
 
-    const pin = document.getElementById('pinBill').value;
-    const pinValue = parseInt(pin);
+    const totalBalance = convertBalance - payAmount;
 
-    const totalBalance = mainBalanceValue - amountValue;
-
-    if(mainBalanceValue < amountValue){
+    if (convertBalance < payAmount) {
         alert('Insufficient Balance');
         return;
     }
 
 
-    if (amountValue > 0 && accNumLength === 11) {
-        if (pinValue === 1234) {
+    if (payAmount > 0 && accNumLength === 11) {
+        if (pin === 1234) {
             mainBalance.innerText = totalBalance;
             alert('Pay Bil Successfully');
 
 
             const transactionContainer = document.getElementById('transaction-container');
-            const today = new Date();
-            const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-
-            // const today = new Date();
-            let hours = today.getHours();
-            let minutes = today.getMinutes();
-            let seconds = today.getSeconds();
-            let ampm = hours >= 12 ? 'PM' : 'AM';
-
-            // Convert 24-hour format to 12-hour format
-            hours = hours % 12;
-            hours = hours ? hours : 12; // the hour '0' should be '12'
-            minutes = minutes < 10 ? '0' + minutes : minutes; // Pad single digit minutes
-            seconds = seconds < 10 ? '0' + seconds : seconds; // Pad single digit seconds
-
-            const time = hours + ":" + minutes + ":" + seconds + " " + ampm;
+            const DateTime = getDateTime();
 
 
             //todo CarD Design 
@@ -62,7 +48,7 @@ payBill.addEventListener('click', function (event) {
             <!--? text  -->
             <div class="text-[rgba(8,8,8,0.7)]">
             <h1 class=" text-[1.2rem] font-semibold">Pay Bill</h1>
-            <p class="text-[1rem] font-normal">${date} ${time}</p>
+            <p class="text-[1rem] font-normal">${DateTime}</p>
             </div>
             </div>
 
@@ -75,10 +61,6 @@ payBill.addEventListener('click', function (event) {
 
 
 
-
-
-
-
         } else {
             alert('Invalid Pin');
         }
@@ -86,7 +68,7 @@ payBill.addEventListener('click', function (event) {
         alert('Enter Amount');
     }
 
-    payAmount.value = '';
-    pin.value = '';
+    payValue.value = '';
+    pinValue.value = '';
 
 });

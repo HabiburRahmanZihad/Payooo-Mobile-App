@@ -3,45 +3,28 @@ const addMoney = document.getElementById('addMoney');
 addMoney.addEventListener('click', function (event) {
     event.preventDefault();
 
-    const amount = document.getElementById('amount');
-    const amountValue = parseInt(amount.value);
+    const amount = getInputValueById("amount");
+    const pin = getInputValueById("pin");
+    const convertBalance = getInnerTextValueById('mainBalance');
+
+    const amountValue = document.getElementById("amount");
+    const pinValue = document.getElementById("pin");
+    const mainBalance = document.getElementById('mainBalance');
 
     const accountNumber = document.getElementById('account-number').value;
     const accNumLength = accountNumber.length;
 
-    const mainBalance = document.getElementById('mainBalance');
-    const mainBalanceValue = parseInt(mainBalance.innerText);
+    const totalBalance = convertBalance + amount;
 
-    const pin = document.getElementById('pin');
-    const pinValue = parseInt(pin.value);
 
-    const totalBalance = mainBalanceValue + amountValue;
-    if (amountValue > 0 && accNumLength === 11) {
-        if (pinValue === 1234) {
+    if (amount > 0 && accNumLength === 11) {
+        if (pin === 1234) {
             mainBalance.innerText = totalBalance;
             alert('Money Added Successfully');
 
 
-
+            const DateTime = getDateTime();
             const transactionContainer = document.getElementById('transaction-container');
-            const today = new Date();
-            const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-
-            // const today = new Date();
-            let hours = today.getHours();
-            let minutes = today.getMinutes();
-            let seconds = today.getSeconds();
-            let ampm = hours >= 12 ? 'PM' : 'AM';
-
-            // Convert 24-hour format to 12-hour format
-            hours = hours % 12;
-            hours = hours ? hours : 12; // the hour '0' should be '12'
-            minutes = minutes < 10 ? '0' + minutes : minutes; // Pad single digit minutes
-            seconds = seconds < 10 ? '0' + seconds : seconds; // Pad single digit seconds
-
-            const time = hours + ":" + minutes + ":" + seconds + " " + ampm;
-
-
             //todo CarD Design 
             const div = document.createElement('div');
             div.classList.add('flex', 'items-center', 'justify-between', 'bg-white', 'px-4', 'py-3', 'rounded-xl', 'space-x-4', 'border-[rgba(8,8,8,0.1)]', 'border-2', 'mt-4');
@@ -56,7 +39,7 @@ addMoney.addEventListener('click', function (event) {
             <!--? text  -->
             <div class="text-[rgba(8,8,8,0.7)]">
             <h1 class=" text-[1.2rem] font-semibold">Add Money</h1>
-            <p class="text-[1rem] font-normal">${date} ${time}</p>
+            <p class="text-[1rem] font-normal">${DateTime}</p>
             </div>
             </div>
 
@@ -68,18 +51,13 @@ addMoney.addEventListener('click', function (event) {
             transactionContainer.appendChild(div);
 
 
-
-
-
-
-
         } else {
             alert('Invalid Pin');
         }
     } else {
         alert('Enter Amount');
     }
-    
-    amount.value= "";
-    pin.value = "";
+
+    amountValue.value = '';
+    pinValue.value = '';
 });
